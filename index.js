@@ -21,7 +21,6 @@ var server = http.createServer((req, res) => {
 		res.end();
 	});
 	*/
-
 	
 	fs.exists(filePath, (exists) => {
 		if (!exists) {
@@ -34,7 +33,6 @@ var server = http.createServer((req, res) => {
 		res.writeHead(200, { "Content-Type": mime.getMimeTypeFromFile(filePath) });
 		fs.createReadStream(filePath).pipe(res);
 	});
-	
 });
 
 server.listen(3000, function () {
